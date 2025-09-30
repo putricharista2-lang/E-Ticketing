@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiket Konser</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">LOKÉT</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Cari event seru di sini">
+      <button>🔍</button>
+    </div>
+    <div class="menu">
+      <a href="#">Buat Event</a>
+      <a href="#">Jelajah</a>
+      <button class="btn-outline">Daftar</button>
+      <button class="btn">Masuk</button>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="banner">
+    <h1>PESTA RAKYAT</h1>
+    <p>14 Oktober 2025 - 25 Oktober 2025 | Tennis Indoor Senayan, Jakarta</p>
+    <p>Saksikan penampilan terbaik dari playlist musik favorit kamu</p>
+    <p>Tiket terbatas! Pastikan kamu jadi bagian dari</p>
+    <p>pengalaman luar biasa ini.</p>
+</section>
+
+<!-- Event Pilihan -->
+<main class="content">
+  <h2>Event Pilihan</h2>
+  <div class="event-list">
+    <!-- Hindia -->
+    <div class="event-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrzzC-VgJDm2Jd8lVg24dkjJ2vm8LhkpgzTQ&s" alt="Hindia">
+      <h3>Hindia</h3>
+      <p>Tennis Indoor Senayan - 14 Okt 2025</p>
+      <button onclick="pesanTiket('Hindia')">Beli Tiket</button>
+    </div>
+    <!-- Feast -->
+    <div class="event-card">
+      <img src="https://i.scdn.co/image/ab67616d0000b273c800b90e2092a5328f699117" alt=".Feast">
+      <h3>.Feast</h3>
+      <p>Tenis Indoor Senayan - 20 Okt 2025</p>
+      <button onclick="pesanTiket('.Feast')">Beli Tiket</button>
+    </div>
+    <!-- For Revenge -->
+    <div class="event-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN_E9SeLTSp6I57fWWIHZ1d143y4bYtC1X4sQtpSRDGzL_1dNIGE6574Syb9DrBEKHQsg&usqp=CAU" alt="For Revenge">
+      <h3>For Revenge </h3>
+      <p>Tenis Indoor Senayan - 25 Okt 2025</p>
+      <button onclick="pesanTiket('For Revenge')">Beli Tiket</button>
+    </div>
+</div>
+</main>
+
+<!-- Modal Form Pemesanan -->
+<div id="formModal" class="modal">
+<div class="modal-content">
+  <span class="close" onclick="tutupModal('formModal')">&times;</span>
+  <h3 id="judulForm"></h3>
+  <form id="orderForm">
+    <label>Nama Lengkap</label>
+    <input type="text" id="nama" required>
+
+    <label>Pilih Kategori Tiket</label>
+    <select id="kategori" required>
+      <option value="VIP">VIP - Rp200.000</option>
+      <option value="Reguler">Reguler - Rp100.000</option>
+      <option value="Festival">Festival - Rp150.000 </option>
+    </select>
+
+    <label>Metode Pembayaran</label>
+    <select id="pembayaran" required>
+      <option value="Transfer Bank">BRI</option>
+      <option value="QRIS">QRIS</option>
+      <option value="Kartu Kredit">BNI</option>
+    </select>
+
+    <button type="submit" class="btn">Konfirmasi</button>
+  </form>
+</div>
+</div>
+
+<!-- Modal QR -->
+<div id="qrModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="tutupModal('qrModal')">&times;</span>
+    <h3 id="judulTiket"></h3>
+    <p id="detailTiket"></p>
+    <div id="qrCode"></div>
+    <p>Tunjukkan QR Code ini saat masuk venue</p>
+    <button class="btn" onclick="cekQR()"> Scan QR</button>
+    <p id="hasilScan" style="margin-top:10px;font-weight:old;"></p>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
